@@ -1816,20 +1816,17 @@ public static class Library_SpriteStudio
 			Rect RectCell = Rect.MinMaxRect(0.0f, 0.0f, 64.0f, 64.0f);
 			int	VertexCollectionIndexTableNo = 0;
 
-			/* Main-Texture Data Get */
 			if(0 < AnimationDataCell.Length)
 			{
+				/* Main-Texture Data Get */
 				Material MaterialNow = ScriptRoot.MaterialGet(AnimationDataCell[FrameNo].DataBody.TextureNo, KindBlendTarget);
 				if(null != MaterialNow)
 				{
 					SizeTexture.x = AnimationDataCell[FrameNo].DataBody.SizeOriginal.x;
 					SizeTexture.y = AnimationDataCell[FrameNo].DataBody.SizeOriginal.y;
 				}
-			}
 
 			/* Cell-Data Get */
-			if(0 < AnimationDataCell.Length)
-			{
 				RectCell = AnimationDataCell[FrameNo].DataBody.Rectangle;
 				PivotTexture = new Vector2(RectCell.width * 0.5f, RectCell.height * 0.5f);
 
