@@ -1817,11 +1817,14 @@ public static class Library_SpriteStudio
 			int	VertexCollectionIndexTableNo = 0;
 
 			/* Main-Texture Data Get */
-			Material MaterialNow = ScriptRoot.MaterialGet(AnimationDataCell[FrameNo].DataBody.TextureNo, KindBlendTarget);
-			if(null != MaterialNow)
+			if(0 < AnimationDataCell.Length)
 			{
-				SizeTexture.x = AnimationDataCell[FrameNo].DataBody.SizeOriginal.x;
-				SizeTexture.y = AnimationDataCell[FrameNo].DataBody.SizeOriginal.y;
+				Material MaterialNow = ScriptRoot.MaterialGet(AnimationDataCell[FrameNo].DataBody.TextureNo, KindBlendTarget);
+				if(null != MaterialNow)
+				{
+					SizeTexture.x = AnimationDataCell[FrameNo].DataBody.SizeOriginal.x;
+					SizeTexture.y = AnimationDataCell[FrameNo].DataBody.SizeOriginal.y;
+				}
 			}
 
 			/* Cell-Data Get */
